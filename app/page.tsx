@@ -232,7 +232,7 @@ export default function Home() {
               Terms
             </a>
             <a
-              href="#"
+              href="mailto:team@tandem-tech.co.uk"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Contact
