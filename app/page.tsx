@@ -117,7 +117,6 @@ export default function Home() {
           <div className="max-w-2xl mx-auto">
             <a
               href="https://tana.tandem-tech.co.uk"
-              target="_blank"
               rel="noopener noreferrer"
               className="block card-glow rounded-2xl p-8 md:p-10 group"
             >
@@ -207,9 +206,9 @@ export default function Home() {
               className="relative h-20 cursor-pointer hover:opacity-80 transition-opacity"
             >
               <img
-              src="/assets/tandem-logo.png"
-              alt="Tandem Logo"
-              className="w-full h-full object-contain"
+                src="/assets/tandem-logo.png"
+                alt="Tandem Logo"
+                className="w-full h-full object-contain"
               />
             </button>
             <span className="text-sm pl-4 text-muted-foreground">
