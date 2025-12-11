@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   description:
     "Tandem builds intelligent tools and infrastructure that let humans and AI work in tandem.",
   keywords: ["AI", "collaboration", "technology", "automation", "workflow"],
+  icons: {
+    icon: "/assets/tandem-logo-square.png",
+  },
 };
 
 export default function RootLayout({

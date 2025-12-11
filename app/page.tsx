@@ -116,7 +116,7 @@ export default function Home() {
 
           <div className="max-w-2xl mx-auto">
             <a
-              href="https://tana.tandem.tech"
+              href="https://tana.tandem-tech.co.uk"
               target="_blank"
               rel="noopener noreferrer"
               className="block card-glow rounded-2xl p-8 md:p-10 group"
@@ -165,72 +165,78 @@ export default function Home() {
             us? We'd love to hear from you.
           </p>
 
-          <div className="card-glow rounded-2xl p-8 md:p-10">
-            <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center">
-                  <svg
-                    className="w-6 h-6 text-neutral-300"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-sm text-neutral-400">Email us at</p>
-                  <a
-                    href="mailto:team@tandem-tech.co.uk"
-                    className="text-lg font-medium text-white hover:text-neutral-300 transition-colors duration-200"
-                  >
-                    team@tandem-tech.co.uk
-                  </a>
-                </div>
+          <a
+            href="mailto:team@tandem-tech.co.uk"
+            className="block card-glow rounded-2xl p-8 md:p-10 group cursor-pointer"
+          >
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center group-hover:bg-neutral-700 transition-colors duration-200">
+                <svg
+                  className="w-6 h-6 text-neutral-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+              </div>
+
+              <div>
+                <p className="text-sm text-neutral-400">Email us at</p>
+                <p className="text-lg font-medium text-white group-hover:text-neutral-300 transition-colors duration-200">
+                  team@tandem-tech.co.uk
+                </p>
               </div>
             </div>
-          </div>
+          </a>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="relative border-t border-neutral-800/50 mt-24">
-        <div className="max-w-6xl mx-auto px-6 py-12">
-          <div className="flex flex-col items-center text-center space-y-6">
-            <div className="space-y-2">
-              <p className="text-sm text-neutral-400">
-                © {currentYear} Tandem Technologies. All rights reserved.
-              </p>
-              <p className="text-xs text-neutral-500">
-                Building tools for humans and AI to work in tandem.
-              </p>
-            </div>
+      <footer className="border-t border-border py-12 px-6">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Left */}
+          <div className="flex flex-col items-start gap-4">
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="relative h-20 cursor-pointer hover:opacity-80 transition-opacity"
+            >
+              <img
+              src="/assets/tandem-logo.png"
+              alt="Tandem Logo"
+              className="w-full h-full object-contain"
+              />
+            </button>
+            <span className="text-sm pl-4 text-muted-foreground">
+              © 2025 Tandem Technologies. All rights reserved.
+            </span>
+          </div>
 
-            <div className="flex gap-6 text-xs text-neutral-500">
-              <a
-                href="#"
-                className="hover:text-neutral-300 transition-colors duration-200"
-              >
-                Privacy
-              </a>
-              <a
-                href="#"
-                className="hover:text-neutral-300 transition-colors duration-200"
-              >
-                Terms
-              </a>
-              <a
-                href="#"
-                className="hover:text-neutral-300 transition-colors duration-200"
-              >
-                Contact
-              </a>
-            </div>
+          {/* Right */}
+          <div className="flex items-center gap-6">
+            <a
+              href="#"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Privacy
+            </a>
+            <a
+              href="#"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Terms
+            </a>
+            <a
+              href="#"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Contact
+            </a>
           </div>
         </div>
       </footer>
