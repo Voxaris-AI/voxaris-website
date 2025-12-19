@@ -67,12 +67,12 @@ export default function Home() {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
               Enabling seamless collaboration between{" "}
               <span className="bg-gradient-to-r from-white via-neutral-200 to-neutral-400 bg-clip-text text-transparent">
-                humans and AI
+                people and AI
               </span>
             </h1>
 
             <p className="text-lg md:text-xl text-neutral-300 max-w-3xl mx-auto leading-relaxed">
-              We build intelligent tools and infrastructure to help humans and
+              We build intelligent tools and infrastructure to help people and
               AI work in <b>tandem</b>, streamlining workflows and enhancing
               collaboration across teams.
             </p>
