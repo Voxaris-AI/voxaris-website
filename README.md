@@ -1,4 +1,4 @@
-# Tandem Technologies Website
+# Voxaris Website
 
 A modern, production-ready Next.js 14 website built with TypeScript and Tailwind CSS.
 

@@ -30,11 +30,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      {/* <Navbar /> */}
+      <Navbar />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* <div className="absolute inset-0 bg-gradient-radial from-neutral-900/50 via-background to-background" />
+        <div className="absolute inset-0 bg-gradient-radial from-neutral-900/50 via-background to-background" />
         <div className="starfield">
           {stars.map((star) => (
             <div
@@ -54,18 +54,18 @@ export default function Home() {
         <div className="binary-stars">
           <div className="binary-star binary-star-1" />
           <div className="binary-star binary-star-2" />
-        </div> */}
+        </div>
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
           <div className="space-y-8">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
-              This website is not in use
+              Streamlining Front-Desk Operations
             </h1>
 
-            {/* <p className="text-lg md:text-xl text-neutral-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-neutral-300 max-w-3xl mx-auto leading-relaxed">
               We build intelligent tools and infrastructure to help people and
-              AI work in <b>tandem</b>, streamlining workflows and enhancing
+              AI work together, streamlining workflows and enhancing
               collaboration across teams.
             </p>
 
@@ -91,7 +91,7 @@ export default function Home() {
                   />
                 </svg>
               </button>
-            </div> */}
+            </div>
           </div>
         </div>
 
@@ -100,7 +100,7 @@ export default function Home() {
       </section>
 
       {/* Our Products Section */}
-      {/* <section id="products" className="relative py-24 px-6">
+      <section id="products" className="relative py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             Our Products
@@ -108,18 +108,18 @@ export default function Home() {
 
           <div className="max-w-2xl mx-auto">
             <a
-              href="https://tana.tandem-tech.co.uk"
+              href="https://ara.voxaris.ai"
               rel="noopener noreferrer"
               className="block card-glow rounded-2xl p-8 md:p-10 group"
             >
               <div className="flex items-start justify-between gap-4">
                 <div className="flex-1">
                   <h3 className="text-3xl md:text-4xl font-bold mb-4 group-hover:text-neutral-100 transition-colors duration-300">
-                    Tana
+                    Ara
                   </h3>
                   <p className="text-lg text-neutral-300 leading-relaxed mb-6">
-                    Tana is our intelligent voice and workflow agent, designed
-                    to streamline operations and enhance the way teams interact
+                    Ara is our intelligent voice and workflow agent, designed to
+                    streamline operations and enhance the way teams interact
                     with AI.
                   </p>
                   <div className="flex items-center gap-2 text-neutral-400 group-hover:text-white transition-colors duration-300">
@@ -143,10 +143,10 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* Contact Section */}
-      {/* <section id="contact" className="relative py-24 px-6">
+      <section id="contact" className="relative py-24 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-8">
             Contact Us
@@ -157,7 +157,7 @@ export default function Home() {
           </p>
 
           <a
-            href="mailto:team@tandem-tech.co.uk"
+            href="mailto:team@voxaris.ai"
             className="block card-glow rounded-2xl p-8 md:p-10 group cursor-pointer"
           >
             <div className="flex items-center gap-4">
@@ -180,16 +180,16 @@ export default function Home() {
               <div>
                 <p className="text-sm text-neutral-400">Email us at</p>
                 <p className="text-lg font-medium text-white group-hover:text-neutral-300 transition-colors duration-200">
-                  team@tandem-tech.co.uk
+                  team@voxaris.ai
                 </p>
               </div>
             </div>
           </a>
         </div>
-      </section> */}
+      </section>
 
       {/* Footer */}
-      {/* <footer className="border-t border-border py-12 px-6">
+      <footer className="border-t border-border py-12 px-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex flex-col items-start gap-4">
             <button
@@ -197,15 +197,15 @@ export default function Home() {
               className="relative h-20 cursor-pointer hover:opacity-80 transition-opacity"
             >
               <img
-                src="/assets/tandem-logo.png"
-                alt="Tandem Logo"
+                src="/assets/voxaris-logo.png"
+                alt="Voxaris Logo"
                 className="w-full h-full object-contain"
               />
             </button>
             <span className="text-sm pl-4 text-muted-foreground">
-              © 2025 Tandem Technologies. All rights reserved.
+              © 2025 Voxaris. All rights reserved.
             </span>
-          </div> 
+          </div>
 
           <div className="flex items-center gap-6">
             <a
@@ -221,14 +221,14 @@ export default function Home() {
               Terms
             </a>
             <a
-              href="mailto:team@tandem-tech.co.uk"
+              href="mailto:team@voxaris.ai"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Contact
             </a>
           </div>
         </div>
-      </footer>*/}
+      </footer>
     </div>
   );
 }

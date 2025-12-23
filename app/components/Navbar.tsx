@@ -46,15 +46,13 @@ export default function Navbar() {
               className="flex items-center gap-3 hover:opacity-80 transition-opacity duration-200"
             >
               <Image
-                src="/assets/tandem-logo-square.png"
-                alt="Tandem Technologies"
+                src="/assets/voxaris-logo-square.png"
+                alt="Voxaris"
                 width={40}
                 height={40}
                 className="w-10 h-10"
               />
-              <span className="text-lg hidden sm:inline">
-                Tandem Technologies
-              </span>
+              <span className="text-lg hidden sm:inline">Voxaris AI</span>
             </button>
 
             {/* Desktop Menu */}
