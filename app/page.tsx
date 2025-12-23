@@ -30,14 +30,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      <Navbar />
+      {/* <Navbar /> */}
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute inset-0 bg-gradient-radial from-neutral-900/50 via-background to-background" />
-
-        {/* Starfield */}
+        {/* <div className="absolute inset-0 bg-gradient-radial from-neutral-900/50 via-background to-background" />
         <div className="starfield">
           {stars.map((star) => (
             <div
@@ -52,26 +49,21 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Shooting Star */}
         <div className="shooting-star" style={{ top: "20%", left: "10%" }} />
 
-        {/* Binary Stars */}
         <div className="binary-stars">
           <div className="binary-star binary-star-1" />
           <div className="binary-star binary-star-2" />
-        </div>
+        </div> */}
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
           <div className="space-y-8">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
-              Enabling seamless collaboration between{" "}
-              <span className="bg-gradient-to-r from-white via-neutral-200 to-neutral-400 bg-clip-text text-transparent">
-                people and AI
-              </span>
+              This website is not in use
             </h1>
 
-            <p className="text-lg md:text-xl text-neutral-300 max-w-3xl mx-auto leading-relaxed">
+            {/* <p className="text-lg md:text-xl text-neutral-300 max-w-3xl mx-auto leading-relaxed">
               We build intelligent tools and infrastructure to help people and
               AI work in <b>tandem</b>, streamlining workflows and enhancing
               collaboration across teams.
@@ -99,16 +91,16 @@ export default function Home() {
                   />
                 </svg>
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
 
         {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+        {/* <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" /> */}
       </section>
 
       {/* Our Products Section */}
-      <section id="products" className="relative py-24 px-6">
+      {/* <section id="products" className="relative py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             Our Products
@@ -151,10 +143,10 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Contact Section */}
-      <section id="contact" className="relative py-24 px-6">
+      {/* <section id="contact" className="relative py-24 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-8">
             Contact Us
@@ -194,12 +186,11 @@ export default function Home() {
             </div>
           </a>
         </div>
-      </section>
+      </section> */}
 
       {/* Footer */}
-      <footer className="border-t border-border py-12 px-6">
+      {/* <footer className="border-t border-border py-12 px-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Left */}
           <div className="flex flex-col items-start gap-4">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -214,11 +205,10 @@ export default function Home() {
             <span className="text-sm pl-4 text-muted-foreground">
               © 2025 Tandem Technologies. All rights reserved.
             </span>
-          </div>
+          </div> 
 
-          {/* Right */}
           <div className="flex items-center gap-6">
-            {/* <a
+            <a
               href="#"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
@@ -229,7 +219,7 @@ export default function Home() {
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Terms
-            </a> */}
+            </a>
             <a
               href="mailto:team@tandem-tech.co.uk"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -238,7 +228,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </footer>
+      </footer>*/}
     </div>
   );
 }

@@ -9,14 +9,12 @@ const instrumentSans = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
-  title:
-    "Tandem Technologies - Enabling seamless collaboration between humans and AI",
-  description:
-    "Tandem builds intelligent tools and infrastructure that let humans and AI work in tandem.",
-  keywords: ["AI", "collaboration", "technology", "automation", "workflow"],
-  icons: {
-    icon: "/assets/tandem-logo-square.png",
-  },
+  title: "Not in use",
+  description: "N/A",
+  keywords: [],
+  // icons: {
+  //   icon: "/assets/tandem-logo-square.png",
+  // },
 };
 
 export default function RootLayout({
