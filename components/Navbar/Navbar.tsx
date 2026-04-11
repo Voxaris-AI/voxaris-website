@@ -51,8 +51,8 @@ export const Navbar: React.FC = () => {
         zIndex: 50,
         display: "flex",
         alignItems: "center",
-        paddingLeft: "1.5vw",
-        paddingRight: "1.5vw",
+        paddingLeft: "2vw",
+        paddingRight: "2vw",
       }}
     >
       <button

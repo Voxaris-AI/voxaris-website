@@ -16,8 +16,7 @@ export const H4: React.FC<TextProps> = ({
 }) => (
   <h4
     style={{
-      fontFamily: "var(--font-ibm-plex-serif), 'IBM Plex Serif', serif",
-      letterSpacing: TYPOGRAPHY.ibmPlexSerifLetterSpacing,
+      fontFamily: "var(--font-ibm-plex-sans), 'IBM Plex Sans', sans-serif",
       fontSize: "15px",
       color: COLORS[color],
       ...style,

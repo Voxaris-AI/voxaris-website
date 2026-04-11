@@ -18,6 +18,7 @@ export const Title: React.FC<TextProps> = ({
     style={{
       fontFamily: "var(--font-ibm-plex-serif), 'IBM Plex Serif', serif",
       letterSpacing: TYPOGRAPHY.ibmPlexSerifLetterSpacing,
+      lineHeight: "1.1",
       fontSize: "85px",
       color: COLORS[color],
       ...style,
