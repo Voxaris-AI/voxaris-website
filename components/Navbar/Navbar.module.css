@@ -1,6 +1,36 @@
 .navbar {
-  position: relative;
+  --nav-bg-alpha: 0;
+  --nav-shadow-alpha: 0;
+  --nav-border-opacity: 0;
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  z-index: 50;
+  display: flex;
+  height: 56px;
+  width: calc(100vw - 16px);
+  max-width: 1200px;
+  transform: translateX(-50%);
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 999px;
+  padding: 0 14px;
+  background: linear-gradient(
+    90deg,
+    rgba(68, 68, 68, var(--nav-bg-alpha)),
+    rgba(48, 48, 48, var(--nav-bg-alpha))
+  );
+  box-shadow: 0 10px 40px rgba(0, 0, 0, var(--nav-shadow-alpha));
   overflow: hidden;
+  transition:
+    background 520ms ease,
+    box-shadow 520ms ease;
+}
+
+.navbarVisible {
+  --nav-bg-alpha: 0.75;
+  --nav-shadow-alpha: 0.4;
+  --nav-border-opacity: 1;
 }
 
 .navbar::before {
@@ -14,10 +44,103 @@
     rgba(48, 48, 48, 0.75)
   );
   border-radius: 2vh;
+  opacity: var(--nav-border-opacity);
   pointer-events: none;
+  transition: opacity 520ms ease;
   -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
+}
+
+.logoButton {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.logo {
+  height: 22px;
+  width: auto;
+  object-fit: contain;
+}
+
+.actions {
+  margin-left: auto;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  gap: 10px;
+}
+
+.productsLabel {
+  margin: 0;
+  font-family: var(--font-ibm-plex-sans), "IBM Plex Sans", sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.contactButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  background: #ffffff;
+  padding: 9px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.contactButtonText {
+  margin: 0;
+  font-family: var(--font-ibm-plex-sans), "IBM Plex Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  color: #0e0e0e;
+}
+
+@media (min-width: 640px) {
+  .navbar {
+    top: 20px;
+    width: min(90vw, 1200px);
+    height: 64px;
+    padding: 0 24px;
+  }
+
+  .logo {
+    height: 24px;
+  }
+
+  .actions {
+    gap: 14px;
+  }
+
+  .productsLabel {
+    font-size: 15px;
+  }
+
+  .contactButton {
+    padding: 10px 16px;
+  }
+
+  .contactButtonText {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 479px) {
+  .productsLabel {
+    display: none;
+  }
 }

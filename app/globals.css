@@ -33,6 +33,11 @@ body {
   animation: caret-blink 1s steps(1, end) infinite;
 }
 
+.hero-title {
+  font-size: clamp(2.25rem, 12vw, 5.3125rem) !important;
+  line-height: 1.05 !important;
+}
+
 @keyframes chevron-float-sine {
   0% {
     transform: translate(-50%, 0px);

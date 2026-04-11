@@ -55,14 +55,13 @@ export function Hero() {
   return (
     <div
       id="hero-section"
-      className="relative min-h-screen bg-cover bg-center flex items-center justify-center"
-      style={{ backgroundImage: "url('/hero-background.png')" }}
+      className="relative flex min-h-[100svh] items-center justify-center bg-[url('/hero-background.png')] bg-cover bg-center"
     >
-      <div className="text-center px-6">
-        <Title className="font-bold">
+      <div className="w-full max-w-5xl px-5 pt-24 pb-20 text-center sm:px-6 sm:pt-28 sm:pb-24">
+        <Title className="hero-title font-bold">
           We build
           <br />
-          <span className="relative inline-block min-w-[12ch] text-center align-baseline">
+          <span className="relative inline-block min-w-[9.5ch] text-center align-baseline sm:min-w-[12ch]">
             <span className="invisible italic">{LONGEST_WORD}</span>
             <span className="absolute inset-0 inline-flex items-baseline justify-center">
               <em className="italic">{displayWord || "\u00A0"}</em>
@@ -70,20 +69,20 @@ export function Hero() {
             </span>
           </span>
         </Title>
-        <H4 className="mt-20 max-w-2xl mx-auto">
-          We build intelligent tools and infrastructure to help people and AI{" "}
-          <br />
-          work together, streamlining workflows
+        <H4 className="mx-auto mt-8 max-w-sm px-1 text-[clamp(0.86rem,2.2vw+0.35rem,0.9375rem)] leading-relaxed sm:mt-20 sm:max-w-2xl sm:px-0">
+          We build intelligent tools and infrastructure to help people and AI
+          <br className="hidden sm:block" /> work together, streamlining
+          workflows
         </H4>
       </div>
 
       <div
         aria-hidden="true"
-        className="scroll-down-chevron pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 text-white/80"
+        className="scroll-down-chevron pointer-events-none absolute bottom-5 left-1/2 -translate-x-1/2 text-white/80 sm:bottom-8"
       >
         <svg
           viewBox="0 0 24 24"
-          className="h-8 w-8"
+          className="h-7 w-7 sm:h-8 sm:w-8"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
