@@ -32,3 +32,37 @@ body {
   transform: skewX(-12deg);
   animation: caret-blink 1s steps(1, end) infinite;
 }
+
+@keyframes chevron-float-sine {
+  0% {
+    transform: translate(-50%, 0px);
+  }
+  12.5% {
+    transform: translate(-50%, -4.5px);
+  }
+  25% {
+    transform: translate(-50%, -8px);
+  }
+  37.5% {
+    transform: translate(-50%, -11px);
+  }
+  50% {
+    transform: translate(-50%, -12px);
+  }
+  62.5% {
+    transform: translate(-50%, -11px);
+  }
+  75% {
+    transform: translate(-50%, -8px);
+  }
+  87.5% {
+    transform: translate(-50%, -4.5px);
+  }
+  100% {
+    transform: translate(-50%, 0px);
+  }
+}
+
+.scroll-down-chevron {
+  animation: chevron-float-sine 2.2s linear infinite;
+}

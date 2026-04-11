@@ -2,8 +2,14 @@
 
 import { useEffect, useState } from "react";
 import { H4, Title } from "@/components/text";
+import { TYPING_WORDS } from "./typingWords";
 
-const WORDS = ["simplicity", "intelligence"] as const;
+const FALLBACK_WORDS = ["simplicity"];
+const WORDS = TYPING_WORDS.length > 0 ? TYPING_WORDS : FALLBACK_WORDS;
+const LONGEST_WORD = WORDS.reduce(
+  (longest, word) => (word.length > longest.length ? word : longest),
+  WORDS[0],
+);
 
 export function Hero() {
   const [wordIndex, setWordIndex] = useState(0);
@@ -49,7 +55,7 @@ export function Hero() {
   return (
     <div
       id="hero-section"
-      className="min-h-screen bg-cover bg-center flex items-center justify-center"
+      className="relative min-h-screen bg-cover bg-center flex items-center justify-center"
       style={{ backgroundImage: "url('/hero-background.png')" }}
     >
       <div className="text-center px-6">
@@ -57,7 +63,7 @@ export function Hero() {
           We build
           <br />
           <span className="relative inline-block min-w-[12ch] text-center align-baseline">
-            <span className="invisible italic">intelligence</span>
+            <span className="invisible italic">{LONGEST_WORD}</span>
             <span className="absolute inset-0 inline-flex items-baseline justify-center">
               <em className="italic">{displayWord || "\u00A0"}</em>
               <span aria-hidden="true" className="typing-caret" />
@@ -69,6 +75,26 @@ export function Hero() {
           <br />
           work together, streamlining workflows
         </H4>
+      </div>
+
+      <div
+        aria-hidden="true"
+        className="scroll-down-chevron pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 text-white/80"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          className="h-8 w-8"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6 9L12 15L18 9"
+            stroke="currentColor"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
       </div>
     </div>
   );
