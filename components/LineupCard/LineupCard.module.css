@@ -1,10 +1,14 @@
 .card {
-  width: clamp(140px, 22vw, 280px);
-  aspect-ratio: 3 / 4;
+  width: min(clamp(370px, 47vw, 700px), clamp(330px, 50svh, 650px));
+  aspect-ratio: 5 / 6;
   flex-shrink: 0;
-  border-radius: 10px;
+  border-radius: 35px;
   padding: 1px;
-  background: linear-gradient(90deg, rgba(68, 68, 68, 0.75), rgba(48, 48, 48, 0.75));
+  background: linear-gradient(
+    90deg,
+    rgba(68, 68, 68, 0.75),
+    rgba(48, 48, 48, 0.75)
+  );
   box-shadow:
     0 14px 30px rgba(0, 0, 0, 0.28),
     0 4px 10px rgba(0, 0, 0, 0.2);
@@ -13,13 +17,23 @@
 .inner {
   height: 100%;
   width: 100%;
-  border-radius: 9px;
+  border-radius: 34px;
 }
 
 .araGradient {
-  background: radial-gradient(circle at 0% 0%, #421f44, rgba(11, 0, 20, 0.95), #220029);
+  background: radial-gradient(
+    circle at 0% 0%,
+    #421f44,
+    rgba(11, 0, 20, 0.95),
+    #220029
+  );
 }
 
 .ariGradient {
-  background: radial-gradient(circle at 0% 0%, #44311f, rgba(20, 10, 0, 0.95), #291200);
+  background: radial-gradient(
+    circle at 0% 0%,
+    #44311f,
+    rgba(20, 10, 0, 0.95),
+    #291200
+  );
 }

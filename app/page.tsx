@@ -29,7 +29,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <div
-        className="min-h-screen px-5 pt-[calc(56px+5vh)] sm:px-6 sm:pt-[calc(64px+5vh)]"
+        className="flex min-h-screen flex-col px-5 pt-[calc(56px+5vh)] sm:px-6 sm:pt-[calc(64px+5vh)]"
         style={{
           backgroundColor: isDarkMode
             ? COLORS.darkerGrey
@@ -42,14 +42,14 @@ export default function Home() {
         >
           Our <em>lineup</em>
         </H1>
-        <H4
-          className="mx-auto mt-3 max-w-2xl text-center"
-        >
+        <H4 className="mx-auto mt-6 max-w-2xl text-center">
           Our selection of voice-enabled AI tools for every industry
         </H4>
-        <div className="mt-8 flex justify-center gap-[5vw]">
-          <LineupCard variant="araGradient" />
-          <LineupCard variant="ariGradient" />
+        <div className="flex flex-1 items-center justify-center">
+          <div className="flex justify-center gap-[3.75vw]">
+            <LineupCard variant="araGradient" />
+            <LineupCard variant="ariGradient" />
+          </div>
         </div>
       </div>
     </main>
