@@ -16,7 +16,7 @@ export const Text: React.FC<TextProps> = ({
 }) => (
   <p
     style={{
-      fontFamily: "IBM Plex Sans",
+      fontFamily: "var(--font-ibm-plex-sans), 'IBM Plex Sans', sans-serif",
       fontSize: "15px",
       color: COLORS[color],
       ...style,

@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { COLORS } from "@/lib/theme";
 import { useSmoothScrollDeceleration } from "@/lib/hooks/useSmoothScrollDeceleration";
+import { Navbar } from "@/components/Navbar";
+import { Hero } from "@/components/Hero";
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -22,10 +24,8 @@ export default function Home() {
 
   return (
     <main>
-      <div
-        className="min-h-screen bg-cover bg-center"
-        style={{ backgroundImage: "url('/hero-background.png')" }}
-      ></div>
+      <Navbar />
+      <Hero />
       <div
         className="min-h-screen"
         style={{

@@ -16,7 +16,7 @@ export const Footer: React.FC<TextProps> = ({
 }) => (
   <footer
     style={{
-      fontFamily: "IBM Plex Sans",
+      fontFamily: "var(--font-ibm-plex-sans), 'IBM Plex Sans', sans-serif",
       fontSize: "10px",
       color: COLORS[color],
       ...style,

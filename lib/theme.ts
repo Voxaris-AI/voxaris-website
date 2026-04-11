@@ -21,4 +21,8 @@ export const COLORS = {
   textSecondaryDarkBg: "#b4b4b4",
 } as const;
 
+export const TYPOGRAPHY = {
+  ibmPlexSerifLetterSpacing: "-0.04em",
+} as const;
+
 export type ColorKey = keyof typeof COLORS;
