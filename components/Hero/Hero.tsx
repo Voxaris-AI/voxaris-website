@@ -16,7 +16,7 @@ export function Hero() {
     let delay = isDeleting ? 75 : 110;
 
     if (!isDeleting && displayWord === targetWord) {
-      delay = 1400;
+      delay = 2500;
     }
 
     if (isDeleting && displayWord.length === 0) {
@@ -56,7 +56,13 @@ export function Hero() {
         <Title className="font-bold">
           We build
           <br />
-          <em>{displayWord}</em>
+          <span className="relative inline-block min-w-[12ch] text-center align-baseline">
+            <span className="invisible italic">intelligence</span>
+            <span className="absolute inset-0 inline-flex items-baseline justify-center">
+              <em className="italic">{displayWord || "\u00A0"}</em>
+              <span aria-hidden="true" className="typing-caret" />
+            </span>
+          </span>
         </Title>
         <H4 className="mt-20 max-w-2xl mx-auto">
           We build intelligent tools and infrastructure to help people and AI{" "}
