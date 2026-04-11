@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { H4, Title } from "@/components/text";
+import { H4, Title } from "@/lib/components/text";
 import { TYPING_WORDS } from "./typingWords";
 
 const FALLBACK_WORDS = ["simplicity"];

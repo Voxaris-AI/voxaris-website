@@ -1,12 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { COLORS } from "@/lib/theme";
 import { useSmoothScrollDeceleration } from "@/lib/hooks/useSmoothScrollDeceleration";
-import { Navbar } from "@/components/Navbar";
-import { Hero } from "@/components/Hero";
-import { H1, H4 } from "@/components/text";
-import { LineupCard } from "@/components/LineupCard";
+import { Navbar } from "@/lib/components/Navbar";
+import { Hero } from "@/lib/sections/Hero";
+import { H1 } from "@/lib/components/text";
+import { Products } from "@/lib/sections/Products";
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -28,30 +27,20 @@ export default function Home() {
     <main>
       <Navbar />
       <Hero />
+      <Products isDarkMode={isDarkMode} />
       <div
-        className="flex min-h-screen flex-col px-5 pt-[calc(56px+5vh)] sm:px-6 sm:pt-[calc(64px+5vh)]"
-        style={{
-          backgroundColor: isDarkMode
-            ? COLORS.darkerGrey
-            : COLORS.navbarButtonBg,
-        }}
+        className={`min-h-screen px-5 pt-[calc(56px+5vh)] sm:px-6 sm:pt-[calc(64px+5vh)] ${
+          isDarkMode ? "bg-[#2b2b2b]" : "bg-white"
+        }`}
       >
         <H1
           className="text-center font-bold"
           color={isDarkMode ? "textPrimaryDarkBg" : "textLightBg"}
         >
-          Our <em>lineup</em>
+          Talk <em>to us</em>
         </H1>
-        <H4 className="mx-auto mt-6 max-w-2xl text-center">
-          Our selection of voice-enabled AI tools for every industry
-        </H4>
-        <div className="flex flex-1 items-center justify-center">
-          <div className="flex justify-center gap-[3.75vw]">
-            <LineupCard variant="araGradient" />
-            <LineupCard variant="ariGradient" />
-          </div>
-        </div>
       </div>
+      <div className="h-[33.333svh] bg-[#1b1b1b]" />
     </main>
   );
 }
