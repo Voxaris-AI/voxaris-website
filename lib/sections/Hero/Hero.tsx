@@ -82,9 +82,7 @@ export function Hero() {
       id="hero-section"
       className="relative bg-[url('/hero-background.png')] bg-cover bg-center"
       overlay={
-        <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center text-white/80"
-        >
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center text-white/80">
           <button
             type="button"
             onClick={handleChevronClick}
