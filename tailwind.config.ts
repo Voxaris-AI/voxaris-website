@@ -13,6 +13,8 @@ const config: Config = {
       colors: {
         background: "#161616",
         foreground: "#ffffff",
+        textPrimaryDarkBg: COLORS.textPrimaryDarkBg,
+        textSecondaryDarkBg: COLORS.textSecondaryDarkBg,
         darkGrey: COLORS.darkGrey,
         darkerGrey: COLORS.darkerGrey,
       },
