@@ -40,8 +40,8 @@ export const Products: React.FC = () => {
       const rawProgress = (scrollTop - sectionTop) / scrollableSectionDistance;
       const progress = Math.max(0, Math.min(1, rawProgress));
 
-      setFirstCardVisible(progress > 0.24);
-      setSecondCardVisible(progress > 0.7);
+      setFirstCardVisible(progress > 0.1);
+      setSecondCardVisible(progress > 0.4);
       rafId = 0;
     };
 
@@ -72,9 +72,11 @@ export const Products: React.FC = () => {
   return (
     <ScrollSection
       id="products-section"
+      className={styles.extendedScrollRoom}
       backgroundColor="#101010"
       contentPlacement="top"
       topOffsetMode="nav"
+      visibilityThreshold={0.11}
     >
       <H1 className="text-center font-bold text-white">
         Our <em>lineup</em>

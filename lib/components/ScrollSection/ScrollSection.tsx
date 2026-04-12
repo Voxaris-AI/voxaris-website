@@ -11,6 +11,7 @@ interface ScrollSectionProps {
   backgroundColor?: string;
   contentPlacement?: "center" | "top";
   topOffsetMode?: "default" | "nav";
+  visibilityThreshold?: number;
 }
 
 const BACKGROUND_CLASS_MAP: Record<string, string> = {
@@ -27,6 +28,7 @@ export function ScrollSection({
   backgroundColor,
   contentPlacement = "center",
   topOffsetMode = "default",
+  visibilityThreshold = 0.35,
 }: ScrollSectionProps) {
   const sectionRef = useRef<HTMLElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -40,10 +42,12 @@ export function ScrollSection({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsVisible(entry.isIntersecting && entry.intersectionRatio > 0.45);
+        setIsVisible(
+          entry.isIntersecting && entry.intersectionRatio > visibilityThreshold,
+        );
       },
       {
-        threshold: [0.25, 0.45, 0.7],
+        threshold: [0.1, visibilityThreshold, 0.6],
       },
     );
 
@@ -52,7 +56,7 @@ export function ScrollSection({
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [visibilityThreshold]);
 
   const sectionChildren = React.Children.toArray(children);
   const backgroundClass = backgroundColor
