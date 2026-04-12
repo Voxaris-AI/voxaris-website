@@ -2,49 +2,41 @@
 
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import {
-  cancelScrollDeceleration,
-  lockScrollDeceleration,
-} from "@/lib/hooks/useSmoothScrollDeceleration";
 import styles from "./Navbar.module.css";
 
 export const Navbar: React.FC = () => {
   const [isScrolledFromHero, setIsScrolledFromHero] = useState(false);
 
   useEffect(() => {
+    const scrollRoot = document.getElementById("scroll-container");
+
     const updateScrolledState = () => {
-      setIsScrolledFromHero(window.scrollY > 8);
+      const currentScroll = scrollRoot ? scrollRoot.scrollTop : window.scrollY;
+      setIsScrolledFromHero(currentScroll > 8);
     };
 
     updateScrolledState();
-    window.addEventListener("scroll", updateScrolledState, { passive: true });
+    const listenerTarget: HTMLElement | Window = scrollRoot ?? window;
+    listenerTarget.addEventListener("scroll", updateScrolledState, {
+      passive: true,
+    });
 
-    return () => window.removeEventListener("scroll", updateScrolledState);
+    return () => {
+      listenerTarget.removeEventListener("scroll", updateScrolledState);
+    };
   }, []);
 
   const handleLogoClick = () => {
-    // Prevent custom deceleration from fighting the logo jump.
-    lockScrollDeceleration(1800);
-    cancelScrollDeceleration();
-
+    const scrollRoot = document.getElementById("scroll-container");
     const heroSection = document.getElementById("hero-section");
+
     if (heroSection) {
       heroSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else if (scrollRoot) {
+      scrollRoot.scrollTo({ top: 0, behavior: "smooth" });
     } else {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
-
-    // Smooth fallback retry if the first smooth scroll gets interrupted.
-    window.setTimeout(() => {
-      if (heroSection) {
-        const heroTop = heroSection.getBoundingClientRect().top;
-        if (Math.abs(heroTop) > 8) {
-          heroSection.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      } else if (window.scrollY > 8) {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-    }, 900);
   };
 
   return (

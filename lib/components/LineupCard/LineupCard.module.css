@@ -1,8 +1,8 @@
 .card {
-  width: min(clamp(370px, 47vw, 700px), clamp(330px, 50svh, 650px));
+  width: min(clamp(286px, 37.4vw, 550px), clamp(253px, 40.7svh, 506px));
   aspect-ratio: 5 / 6;
   flex-shrink: 0;
-  border-radius: 35px;
+  border-radius: 28px;
   padding: 1px;
   background: linear-gradient(
     90deg,
@@ -17,7 +17,7 @@
 .inner {
   height: 100%;
   width: 100%;
-  border-radius: 34px;
+  border-radius: 27px;
 }
 
 .araGradient {

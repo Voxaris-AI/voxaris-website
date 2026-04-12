@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 html {
-  scroll-behavior: auto;
-  -webkit-overflow-scrolling: auto;
-  scroll-deceleration: auto;
+  scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
-  overflow-y: scroll;
+  min-height: 100%;
+  overflow: hidden;
 }
 
 @keyframes caret-blink {
@@ -70,4 +70,15 @@ body {
 
 .scroll-down-chevron {
   animation: chevron-float-sine 2.2s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .scroll-down-chevron,
+  .typing-caret {
+    animation: none;
+  }
 }

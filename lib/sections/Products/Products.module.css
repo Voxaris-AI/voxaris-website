@@ -1,0 +1,22 @@
+.cardReveal {
+  opacity: 0;
+  transform: translate3d(0, 20px, 0);
+  transition-property: opacity, transform;
+  transition-duration: 1200ms;
+  transition-timing-function: cubic-bezier(0.2, 0.65, 0.1, 1);
+  will-change: opacity, transform;
+}
+
+.cardVisible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cardReveal,
+  .cardVisible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
