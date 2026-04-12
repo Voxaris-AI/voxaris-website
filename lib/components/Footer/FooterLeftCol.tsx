@@ -56,7 +56,9 @@ export const FooterLeftCol: React.FC<FooterLeftColProps> = ({
 
       <div className="mt-3 flex gap-1 text-textPrimaryDarkBg">
         <a
-          href="#"
+          href="https://www.linkedin.com/company/voxaris"
+          target="_blank"
+          rel="noopener noreferrer"
           aria-label="LinkedIn"
           className="inline-flex rounded p-1 transition duration-200 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.78)] focus-visible:text-white focus-visible:drop-shadow-[0_0_8px_rgba(255,255,255,0.78)]"
         >

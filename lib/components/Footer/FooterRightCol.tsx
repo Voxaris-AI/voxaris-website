@@ -26,7 +26,7 @@ export const FooterRightCol: React.FC = () => {
       </h3>
       <h4 className="mt-0 text-[20px] font-bold underline sm:text-[22px]">
         <a
-          href="#"
+          href="mailto:team@voxaris.ai"
           className="text-textPrimaryDarkBg transition duration-200 hover:text-white hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.82)] focus-visible:text-white focus-visible:drop-shadow-[0_0_10px_rgba(255,255,255,0.82)]"
         >
           team@vox<span className="italic">aris</span>.ai

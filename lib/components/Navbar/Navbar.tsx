@@ -7,28 +7,37 @@ import styles from "./Navbar.module.css";
 export const Navbar: React.FC = () => {
   const [isScrolledFromHero, setIsScrolledFromHero] = useState(false);
   const [isProductsActive, setIsProductsActive] = useState(false);
+  const [isContactActive, setIsContactActive] = useState(false);
 
   useEffect(() => {
     const scrollRoot = document.getElementById("scroll-container");
     const productsSection = document.getElementById("products-section");
+    const contactSection = document.getElementById("contact-section");
 
     const updateScrolledState = () => {
       const currentScroll = scrollRoot ? scrollRoot.scrollTop : window.scrollY;
       setIsScrolledFromHero(currentScroll > 8);
 
-      if (!productsSection) {
-        setIsProductsActive(false);
-        return;
-      }
-
-      const productsTop = productsSection.offsetTop;
-      const productsBottom = productsTop + productsSection.offsetHeight;
       const viewportHeight = scrollRoot
         ? scrollRoot.clientHeight
         : window.innerHeight;
       const probeY = currentScroll + viewportHeight * 0.42;
 
-      setIsProductsActive(probeY >= productsTop && probeY < productsBottom);
+      if (productsSection) {
+        const productsTop = productsSection.offsetTop;
+        const productsBottom = productsTop + productsSection.offsetHeight;
+        setIsProductsActive(probeY >= productsTop && probeY < productsBottom);
+      } else {
+        setIsProductsActive(false);
+      }
+
+      if (contactSection) {
+        const contactTop = contactSection.offsetTop;
+        const contactBottom = contactTop + contactSection.offsetHeight;
+        setIsContactActive(probeY >= contactTop && probeY < contactBottom);
+      } else {
+        setIsContactActive(false);
+      }
     };
 
     updateScrolledState();
@@ -133,7 +142,10 @@ export const Navbar: React.FC = () => {
         <button
           type="button"
           onClick={handleContactClick}
-          className={styles.contactButton}
+          className={`${styles.contactButton} ${
+            isContactActive ? styles.contactButtonActive : ""
+          }`}
+          aria-current={isContactActive ? "page" : undefined}
         >
           <span className={styles.contactButtonText}>Contact Us</span>
         </button>
