@@ -17,6 +17,30 @@ export function Hero() {
   const [displayWord, setDisplayWord] = useState<string>(WORDS[0]);
   const [isDeleting, setIsDeleting] = useState(false);
 
+  const handleChevronClick = () => {
+    const scrollRoot = document.getElementById("scroll-container");
+    const productsSection = document.getElementById("products-section");
+
+    if (productsSection && scrollRoot) {
+      const sectionTop = productsSection.offsetTop;
+      const maxSectionScroll = Math.max(
+        0,
+        productsSection.offsetHeight - scrollRoot.clientHeight,
+      );
+      const targetTop = Math.min(
+        sectionTop + maxSectionScroll,
+        scrollRoot.scrollHeight - scrollRoot.clientHeight,
+      );
+
+      scrollRoot.scrollTo({ top: targetTop, behavior: "smooth" });
+      return;
+    }
+
+    if (productsSection) {
+      productsSection.scrollIntoView({ behavior: "smooth", block: "end" });
+    }
+  };
+
   useEffect(() => {
     const targetWord = WORDS[wordIndex];
 
@@ -59,10 +83,14 @@ export function Hero() {
       className="relative bg-[url('/hero-background.png')] bg-cover bg-center"
       overlay={
         <div
-          aria-hidden="true"
           className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center text-white/80"
         >
-          <span className="scroll-down-chevron block">
+          <button
+            type="button"
+            onClick={handleChevronClick}
+            aria-label="Scroll to end of products section"
+            className="scroll-down-chevron pointer-events-auto block bg-transparent"
+          >
             <svg
               viewBox="0 0 24 24"
               className="h-7 w-7 sm:h-8 sm:w-8"
@@ -77,7 +105,7 @@ export function Hero() {
                 strokeLinejoin="round"
               />
             </svg>
-          </span>
+          </button>
         </div>
       }
     >
