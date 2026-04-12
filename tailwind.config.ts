@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { COLORS } from "./lib/theme";
 
 const config: Config = {
   content: [
@@ -12,6 +13,9 @@ const config: Config = {
       colors: {
         background: "#161616",
         foreground: "#ffffff",
+      },
+      backgroundImage: {
+        "grey-glass": COLORS.greyGlassGradient,
       },
       fontFamily: {
         sans: ["var(--font-ibm-plex-sans)", "system-ui", "sans-serif"],
