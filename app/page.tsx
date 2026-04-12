@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Navbar } from "@/lib/components/Navbar";
 import { ScrollContainer } from "@/lib/components/ScrollContainer";
+import { Footer } from "@/lib/components/Footer";
 import { Hero } from "@/lib/sections/Hero";
 import { Products } from "@/lib/sections/Products";
 import { Contact } from "@/lib/sections/Contact";
@@ -29,6 +30,7 @@ export default function Home() {
         <Hero />
         <Products />
         <Contact isDarkMode={isDarkMode} />
+        <Footer />
       </ScrollContainer>
     </>
   );

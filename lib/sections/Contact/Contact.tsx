@@ -11,12 +11,13 @@ interface ContactProps {
 
 export const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
   const [cardVisible, setCardVisible] = useState(false);
+  const cardRef = React.useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const scrollContainer = document.getElementById("scroll-container");
-    const section = document.getElementById("contact-section");
+    const cardElement = cardRef.current;
 
-    if (!section || !scrollContainer) {
+    if (!cardElement || !scrollContainer) {
       return;
     }
 
@@ -27,45 +28,23 @@ export const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
       return;
     }
 
-    let rafId = 0;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && entry.intersectionRatio > 0.2) {
+          setCardVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        root: scrollContainer,
+        threshold: [0.1, 0.2, 0.4],
+      },
+    );
 
-    const updateRevealState = () => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      const viewportHeight = scrollContainer.clientHeight;
-      const scrollTop = scrollContainer.scrollTop;
-      const scrollableSectionDistance = Math.max(
-        1,
-        sectionHeight - viewportHeight,
-      );
-      const rawProgress = (scrollTop - sectionTop) / scrollableSectionDistance;
-      const progress = Math.max(0, Math.min(1, rawProgress));
-
-      setCardVisible(progress > 0.22);
-      rafId = 0;
-    };
-
-    const onScrollOrResize = () => {
-      if (rafId !== 0) {
-        return;
-      }
-
-      rafId = window.requestAnimationFrame(updateRevealState);
-    };
-
-    updateRevealState();
-    scrollContainer.addEventListener("scroll", onScrollOrResize, {
-      passive: true,
-    });
-    window.addEventListener("resize", onScrollOrResize);
+    observer.observe(cardElement);
 
     return () => {
-      if (rafId !== 0) {
-        window.cancelAnimationFrame(rafId);
-      }
-
-      scrollContainer.removeEventListener("scroll", onScrollOrResize);
-      window.removeEventListener("resize", onScrollOrResize);
+      observer.disconnect();
     };
   }, []);
 
@@ -76,6 +55,7 @@ export const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
       contentPlacement="top"
       topOffsetMode="nav"
       visibilityThreshold={0.11}
+      heightMode="twoThirds"
     >
       <H1
         className="text-center font-bold"
@@ -91,8 +71,9 @@ export const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
         <br />
         partnering with us? We&apos;d love to hear from you
       </H4>
-      <div className="flex min-h-[52svh] w-full items-center justify-center">
+      <div className="flex w-full items-center justify-center py-2">
         <div
+          ref={cardRef}
           className={`${styles.cardReveal} ${
             cardVisible ? styles.cardVisible : ""
           } w-[min(calc((100vw-16px)*0.8),960px)] max-w-none rounded-[28px] bg-grey-glass p-px shadow-[0_14px_30px_rgba(0,0,0,0.28),0_4px_10px_rgba(0,0,0,0.2)] sm:w-[min(72vw,960px)]`}

@@ -12,6 +12,7 @@ interface ScrollSectionProps {
   contentPlacement?: "center" | "top";
   topOffsetMode?: "default" | "nav";
   visibilityThreshold?: number;
+  heightMode?: "default" | "twoThirds";
 }
 
 const BACKGROUND_CLASS_MAP: Record<string, string> = {
@@ -29,6 +30,7 @@ export function ScrollSection({
   contentPlacement = "center",
   topOffsetMode = "default",
   visibilityThreshold = 0.35,
+  heightMode = "default",
 }: ScrollSectionProps) {
   const sectionRef = useRef<HTMLElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -64,14 +66,20 @@ export function ScrollSection({
     : "";
   const placementClass = contentPlacement === "top" ? styles.topAligned : "";
   const offsetClass = topOffsetMode === "nav" ? styles.navOffsetTop : "";
+  const sectionHeightClass =
+    heightMode === "twoThirds" ? styles.twoThirdsSection : "";
+  const frameHeightClass =
+    heightMode === "twoThirds" ? styles.twoThirdsFrame : "";
 
   return (
     <section
       id={id}
       ref={sectionRef}
-      className={`${styles.section} ${backgroundClass} ${className ?? ""}`}
+      className={`${styles.section} ${sectionHeightClass} ${backgroundClass} ${className ?? ""}`}
     >
-      <div className={`${styles.stickyFrame} ${placementClass} ${offsetClass}`}>
+      <div
+        className={`${styles.stickyFrame} ${frameHeightClass} ${placementClass} ${offsetClass}`}
+      >
         <div className={`${styles.content} ${isVisible ? styles.visible : ""}`}>
           {sectionChildren.map((child, index) => (
             <div key={index} className={styles.revealItem}>

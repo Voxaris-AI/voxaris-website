@@ -13,6 +13,8 @@ const config: Config = {
       colors: {
         background: "#161616",
         foreground: "#ffffff",
+        darkGrey: COLORS.darkGrey,
+        darkerGrey: COLORS.darkerGrey,
       },
       backgroundImage: {
         "grey-glass": COLORS.greyGlassGradient,
