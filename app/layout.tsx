@@ -18,7 +18,10 @@ const ibmPlexSerif = IBM_Plex_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Page",
+  title: "Voxaris - Intelligence infrastructure",
+  icons: {
+    icon: "/voxaris-favicon.png",
+  },
 };
 
 export default function RootLayout({
