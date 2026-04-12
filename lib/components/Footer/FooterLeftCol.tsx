@@ -15,16 +15,26 @@ export const FooterLeftCol: React.FC<FooterLeftColProps> = ({
         type="button"
         aria-label="Scroll to hero section"
         onClick={onLogoClick}
-        className="cursor-pointer border-0 bg-transparent p-0"
+        className="group cursor-pointer border-0 bg-transparent p-0"
       >
-        <Image
-          src="/voxaris-logo.png"
-          alt="Voxaris Logo"
-          width={120}
-          height={24}
-          className="h-7 w-auto sm:h-[30px]"
-          priority
-        />
+        <span className="grid">
+          <Image
+            src="/voxaris-logo.png"
+            alt="Voxaris Logo"
+            width={120}
+            height={24}
+            className="col-start-1 row-start-1 h-7 w-auto transition-opacity duration-200 group-hover:opacity-0 group-focus-visible:opacity-0 sm:h-[30px]"
+            priority
+          />
+          <Image
+            src="/voxaris-logo-glow.png"
+            alt=""
+            aria-hidden="true"
+            width={120}
+            height={24}
+            className="col-start-1 row-start-1 h-7 w-auto opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100 sm:h-[30px]"
+          />
+        </span>
       </button>
 
       <FooterText className="mt-2 leading-tight">
@@ -33,18 +43,23 @@ export const FooterLeftCol: React.FC<FooterLeftColProps> = ({
         modern businesses
       </FooterText>
 
-      <FooterText className="mt-1 underline">
+      <FooterText className="mt-1">
         <a
           href="https://www.google.com/maps/place/London,+United+Kingdom"
           target="_blank"
           rel="noopener noreferrer"
+          className="underline-offset-2 hover:underline focus-visible:underline"
         >
           London, United Kingdom
         </a>
       </FooterText>
 
       <div className="mt-3 flex gap-1 text-textPrimaryDarkBg">
-        <a href="#" aria-label="LinkedIn" className="inline-flex">
+        <a
+          href="#"
+          aria-label="LinkedIn"
+          className="inline-flex rounded p-1 transition duration-200 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.78)] focus-visible:text-white focus-visible:drop-shadow-[0_0_8px_rgba(255,255,255,0.78)]"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -62,7 +77,11 @@ export const FooterLeftCol: React.FC<FooterLeftColProps> = ({
           </svg>
         </a>
 
-        <a href="#" aria-label="Instagram" className="inline-flex">
+        <a
+          href="#"
+          aria-label="Instagram"
+          className="inline-flex rounded p-1 transition duration-200 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.78)] focus-visible:text-white focus-visible:drop-shadow-[0_0_8px_rgba(255,255,255,0.78)]"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -84,7 +103,11 @@ export const FooterLeftCol: React.FC<FooterLeftColProps> = ({
           </svg>
         </a>
 
-        <a href="#" aria-label="X" className="inline-flex">
+        <a
+          href="#"
+          aria-label="X"
+          className="inline-flex rounded p-1 transition duration-200 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.78)] focus-visible:text-white focus-visible:drop-shadow-[0_0_8px_rgba(255,255,255,0.78)]"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"

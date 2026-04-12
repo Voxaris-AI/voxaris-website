@@ -67,10 +67,34 @@
   cursor: pointer;
 }
 
+.logoStack {
+  display: grid;
+}
+
 .logo {
+  grid-area: 1 / 1;
   height: 22px;
   width: auto;
   object-fit: contain;
+  transition: opacity 200ms ease;
+}
+
+.logoBase {
+  opacity: 1;
+}
+
+.logoGlow {
+  opacity: 0;
+}
+
+.logoButton:hover .logoBase,
+.logoButton:focus-visible .logoBase {
+  opacity: 0;
+}
+
+.logoButton:hover .logoGlow,
+.logoButton:focus-visible .logoGlow {
+  opacity: 1;
 }
 
 .actions {
@@ -81,12 +105,24 @@
   gap: 10px;
 }
 
-.productsLabel {
+.productsButton {
   margin: 0;
+  border: 0;
+  background: transparent;
+  padding: 0;
   font-family: var(--font-ibm-plex-sans), "IBM Plex Sans", sans-serif;
   font-size: 14px;
+  font-weight: 400;
   color: #ffffff;
   white-space: nowrap;
+  cursor: pointer;
+  transition: font-weight 160ms ease;
+}
+
+.productsButton:hover,
+.productsButton:focus-visible,
+.productsButtonActive {
+  font-weight: 700;
 }
 
 .contactButton {
@@ -126,7 +162,7 @@
     gap: 14px;
   }
 
-  .productsLabel {
+  .productsButton {
     font-size: 15px;
   }
 
@@ -140,7 +176,7 @@
 }
 
 @media (max-width: 479px) {
-  .productsLabel {
+  .productsButton {
     display: none;
   }
 }
