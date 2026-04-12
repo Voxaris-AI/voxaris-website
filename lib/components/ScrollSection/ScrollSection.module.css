@@ -20,6 +20,14 @@
   background-color: #252525;
 }
 
+.bgDarkGrey {
+  background-color: #2b2b2b;
+}
+
+.bgDarkerGrey {
+  background-color: #1b1b1b;
+}
+
 .stickyFrame {
   position: sticky;
   top: 0;

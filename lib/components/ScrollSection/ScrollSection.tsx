@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import { COLORS, type ColorKey } from "@/lib/theme";
 import styles from "./ScrollSection.module.css";
 
 interface ScrollSectionProps {
@@ -8,7 +9,7 @@ interface ScrollSectionProps {
   children: React.ReactNode;
   overlay?: React.ReactNode;
   className?: string;
-  backgroundColor?: string;
+  backgroundColor?: ColorKey | string;
   contentPlacement?: "center" | "top";
   topOffsetMode?: "default" | "nav";
   visibilityThreshold?: number;
@@ -16,6 +17,10 @@ interface ScrollSectionProps {
 }
 
 const BACKGROUND_CLASS_MAP: Record<string, string> = {
+  darkGrey: "bgDarkGrey",
+  darkerGrey: "bgDarkerGrey",
+  [COLORS.darkGrey]: "bgDarkGrey",
+  [COLORS.darkerGrey]: "bgDarkerGrey",
   "#101010": "bgDark",
   "#f4f4f1": "bgLight",
   "#252525": "bgCharcoal",

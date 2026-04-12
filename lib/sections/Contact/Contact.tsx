@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { H1, H2, H4, Text } from "@/lib/components/text";
 import { ScrollSection } from "@/lib/components/ScrollSection";
+import { COLORS } from "@/lib/theme";
 import styles from "./Contact.module.css";
 
 interface ContactProps {
@@ -51,7 +52,7 @@ export const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
   return (
     <ScrollSection
       id="contact-section"
-      backgroundColor={isDarkMode ? "#252525" : "#f4f4f1"}
+      backgroundColor={COLORS.darkGrey}
       contentPlacement="top"
       topOffsetMode="nav"
       visibilityThreshold={0.11}

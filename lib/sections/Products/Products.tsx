@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { H1, H4 } from "@/lib/components/text";
 import { LineupCard } from "@/lib/components/LineupCard";
 import { ScrollSection } from "@/lib/components/ScrollSection";
+import { COLORS } from "@/lib/theme";
 import styles from "./Products.module.css";
 
 export const Products: React.FC = () => {
@@ -73,7 +74,7 @@ export const Products: React.FC = () => {
     <ScrollSection
       id="products-section"
       className={styles.extendedScrollRoom}
-      backgroundColor="#101010"
+      backgroundColor={COLORS.darkerGrey}
       contentPlacement="top"
       topOffsetMode="nav"
       visibilityThreshold={0.11}
@@ -82,7 +83,7 @@ export const Products: React.FC = () => {
         Our <em>lineup</em>
       </H1>
       <H4 className="mx-auto mt-0 max-w-2xl text-center text-white/85">
-        Our selection of voice-enbled AI tools for every industry
+        Our selection of voice-enabled AI tools for every industry
       </H4>
       <div className="mt-5 flex flex-wrap items-center justify-center gap-10">
         <div
