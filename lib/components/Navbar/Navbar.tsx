@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import {
   cancelScrollDeceleration,
@@ -58,9 +59,11 @@ export const Navbar: React.FC = () => {
         onClick={handleLogoClick}
         className={styles.logoButton}
       >
-        <img
+        <Image
           src="/voxaris-logo.png"
           alt="Voxaris Logo"
+          width={120}
+          height={24}
           className={styles.logo}
         />
       </button>

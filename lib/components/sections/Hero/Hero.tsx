@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { H4, Title } from "@/lib/components/text";
-import { TYPING_WORDS } from "./typingWords";
+import { TYPING_WORDS } from "@/lib/sections/Hero/typingWords";
 
 const FALLBACK_WORDS = ["simplicity"];
 const WORDS = TYPING_WORDS.length > 0 ? TYPING_WORDS : FALLBACK_WORDS;
