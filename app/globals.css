@@ -10,7 +10,7 @@ html {
 body {
   min-height: 100%;
   overflow: hidden;
-  background-color: #2b2b2b;
+  background-color: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {

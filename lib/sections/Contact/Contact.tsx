@@ -155,13 +155,13 @@ export const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
     >
       <H1
         className="text-center font-bold"
-        color={isDarkMode ? "textPrimaryDarkBg" : "textLightBg"}
+        color="textPrimaryDarkBg"
       >
         Talk <em>to us</em>
       </H1>
       <H4
         className="mx-auto mt-0 max-w-2xl text-center"
-        color={isDarkMode ? "textSecondaryDarkBg" : "textLightBg"}
+        color="textPrimaryDarkBg"
       >
         Interested in learning more about our products or
         <br />

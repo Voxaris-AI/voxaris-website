@@ -13,6 +13,7 @@ export const COLORS = {
     "radial-gradient(circle at 0% 0%, #44311f, rgba(20, 10, 0, 0.95), #291200)",
 
   // Solid Colors
+  white: "#ffffff",
   navbarButtonBg: "#ffffff",
   textPrimaryDarkBg: "#ffffff",
   textLightBg: "#0e0e0e",

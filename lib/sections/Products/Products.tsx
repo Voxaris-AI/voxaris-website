@@ -7,7 +7,11 @@ import { ScrollSection } from "@/lib/components/ScrollSection";
 import { COLORS } from "@/lib/theme";
 import styles from "./Products.module.css";
 
-export const Products: React.FC = () => {
+interface ProductsProps {
+  isDarkMode: boolean;
+}
+
+export const Products: React.FC<ProductsProps> = ({ isDarkMode }) => {
   const [firstCardVisible, setFirstCardVisible] = useState(false);
   const [secondCardVisible, setSecondCardVisible] = useState(false);
   const firstCardRef = React.useRef<HTMLAnchorElement | null>(null);
@@ -164,15 +168,21 @@ export const Products: React.FC = () => {
     <ScrollSection
       id="products-section"
       className={styles.extendedScrollRoom}
-      backgroundColor={COLORS.darkerGrey}
+      backgroundColor={isDarkMode ? COLORS.darkerGrey : COLORS.white}
       contentPlacement="top"
       topOffsetMode="nav"
       visibilityThreshold={0.11}
     >
-      <H1 className="text-center font-bold text-white">
+      <H1
+        className="text-center font-bold"
+        color={isDarkMode ? "textPrimaryDarkBg" : "textLightBg"}
+      >
         Our <em>lineup</em>
       </H1>
-      <H4 className="mx-auto mt-0 max-w-2xl text-center text-white/85">
+      <H4
+        className="mx-auto mt-0 max-w-2xl text-center"
+        color={isDarkMode ? "textPrimaryDarkBg" : "textLightBg"}
+      >
         Our selection of voice-enabled AI tools for every industry
       </H4>
       <div className="mt-5 flex flex-wrap items-center justify-center gap-10">

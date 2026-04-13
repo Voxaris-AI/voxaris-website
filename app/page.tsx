@@ -28,7 +28,7 @@ export default function Home() {
       <Navbar />
       <ScrollContainer>
         <Hero />
-        <Products />
+        <Products isDarkMode={isDarkMode} />
         <Contact isDarkMode={isDarkMode} />
         <Footer />
       </ScrollContainer>
