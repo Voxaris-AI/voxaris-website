@@ -1,19 +1,28 @@
 import type { Config } from "tailwindcss";
+import { COLORS } from "./lib/theme";
 
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./lib/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
         background: "#161616",
         foreground: "#ffffff",
+        textPrimaryDarkBg: COLORS.textPrimaryDarkBg,
+        textSecondaryDarkBg: COLORS.textSecondaryDarkBg,
+        darkGrey: COLORS.darkGrey,
+        darkerGrey: COLORS.darkerGrey,
+      },
+      backgroundImage: {
+        "grey-glass": COLORS.greyGlassGradient,
       },
       fontFamily: {
-        sans: ["var(--font-instrument-sans)", "system-ui", "sans-serif"],
+        sans: ["var(--font-ibm-plex-sans)", "system-ui", "sans-serif"],
       },
       animation: {
         "shooting-star": "shooting-star 3s ease-in-out infinite",

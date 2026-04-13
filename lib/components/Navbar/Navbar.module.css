@@ -1,0 +1,213 @@
+.navbar {
+  --nav-bg-alpha: 0;
+  --nav-shadow-alpha: 0;
+  --nav-border-opacity: 0;
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  z-index: 50;
+  display: flex;
+  height: 56px;
+  width: calc(100vw - 16px);
+  max-width: 1200px;
+  transform: translateX(-50%);
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 999px;
+  padding: 0 14px;
+  background: linear-gradient(
+    90deg,
+    rgba(68, 68, 68, var(--nav-bg-alpha)),
+    rgba(48, 48, 48, var(--nav-bg-alpha))
+  );
+  box-shadow: 0 10px 40px rgba(0, 0, 0, var(--nav-shadow-alpha));
+  overflow: hidden;
+  transition:
+    background 520ms ease,
+    box-shadow 520ms ease;
+}
+
+.navbarVisible {
+  --nav-bg-alpha: 0.75;
+  --nav-shadow-alpha: 0.4;
+  --nav-border-opacity: 1;
+}
+
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(68, 68, 68, 0.75),
+    rgba(48, 48, 48, 0.75)
+  );
+  border-radius: 2vh;
+  opacity: var(--nav-border-opacity);
+  pointer-events: none;
+  transition: opacity 520ms ease;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.logoButton {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.logoStack {
+  display: grid;
+}
+
+.logo {
+  grid-area: 1 / 1;
+  height: 22px;
+  width: auto;
+  object-fit: contain;
+  transition: opacity 200ms ease;
+}
+
+.logoBase {
+  opacity: 1;
+}
+
+.logoGlow {
+  opacity: 0;
+}
+
+.logoButton:hover .logoBase,
+.logoButton:focus-visible .logoBase {
+  opacity: 0;
+}
+
+.logoButton:hover .logoGlow,
+.logoButton:focus-visible .logoGlow {
+  opacity: 1;
+}
+
+.actions {
+  margin-left: auto;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  gap: 10px;
+}
+
+.productsButton {
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  padding: 8px 12px;
+  font-family: var(--font-ibm-plex-sans), "IBM Plex Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #ffffff;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    font-weight 160ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.productsButton:hover,
+.productsButton:focus-visible,
+.productsButtonActive {
+  border-color: rgba(255, 255, 255, 0.34);
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  font-weight: 700;
+}
+
+.contactButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  background: #ffffff;
+  padding: 9px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    box-shadow 180ms ease,
+    filter 180ms ease,
+    transform 180ms ease;
+}
+
+.contactButtonText {
+  margin: 0;
+  font-family: var(--font-ibm-plex-sans), "IBM Plex Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  color: #0e0e0e;
+  transition: text-shadow 180ms ease;
+}
+
+.contactButton:hover,
+.contactButton:focus-visible,
+.contactButtonActive {
+  box-shadow:
+    0 0 10px rgba(255, 255, 255, 0.5),
+    0 0 20px rgba(170, 225, 255, 0.32);
+  filter: brightness(1.02);
+  transform: translateY(-0.8px);
+}
+
+.contactButton:hover .contactButtonText,
+.contactButton:focus-visible .contactButtonText,
+.contactButtonActive .contactButtonText {
+  text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.5),
+    0 0 10px rgba(170, 225, 255, 0.32);
+}
+
+@media (min-width: 640px) {
+  .navbar {
+    top: 20px;
+    width: min(90vw, 1200px);
+    height: 64px;
+    padding: 0 24px;
+  }
+
+  .logo {
+    height: 24px;
+  }
+
+  .actions {
+    gap: 14px;
+  }
+
+  .productsButton {
+    font-size: 15px;
+  }
+
+  .contactButton {
+    padding: 10px 16px;
+  }
+
+  .contactButtonText {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 479px) {
+  .productsButton {
+    display: none;
+  }
+}

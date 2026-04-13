@@ -1,34 +1,26 @@
 import type { Metadata } from "next";
-import { Instrument_Sans } from "next/font/google";
+import { IBM_Plex_Sans, IBM_Plex_Serif } from "next/font/google";
 import "./globals.css";
 
-const instrumentSans = Instrument_Sans({
+const ibmPlexSans = IBM_Plex_Sans({
   subsets: ["latin"],
-  variable: "--font-instrument-sans",
+  weight: ["400", "500", "700"],
+  variable: "--font-ibm-plex-sans",
+  display: "swap",
+});
+
+const ibmPlexSerif = IBM_Plex_Serif({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-ibm-plex-serif",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Voxaris AI - Streamlining Front-Desk Operations",
-  description:
-    "Voxaris AI leverages advanced artificial intelligence to optimize and streamline front-desk operations for businesses, enhancing customer experience and operational efficiency.",
-  keywords: [
-    "Voxaris AI",
-    "Artificial Intelligence",
-    "Front-Desk Operations",
-    "Business Solutions",
-    "AI Tools",
-  ],
+  title: "Voxaris - Intelligence infrastructure",
   icons: {
-    icon: [
-      { url: "/assets/voxaris-logo-square.png" },
-      {
-        url: "/assets/voxaris-logo-square.png",
-        sizes: "32x32",
-        type: "image/png",
-      },
-    ],
-    apple: "/assets/voxaris-logo-square.png",
+    icon: "/voxaris-favicon.png",
   },
 };
 
@@ -39,7 +31,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${instrumentSans.variable} font-sans`}>{children}</body>
+      <body className={`${ibmPlexSans.variable} ${ibmPlexSerif.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }

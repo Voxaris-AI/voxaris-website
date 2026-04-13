@@ -2,134 +2,90 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    @apply bg-background text-foreground antialiased;
-  }
-}
-
-/* Starfield effect */
-.starfield {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.star {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: white;
-  border-radius: 50%;
-  opacity: 0.5;
-  animation: twinkle 3s infinite;
-}
-
-@keyframes twinkle {
-  0%,
-  100% {
-    opacity: 0.3;
-  }
-  50% {
-    opacity: 0.8;
-  }
-}
-
-/* Shooting star */
-.shooting-star {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 1) 100%
-  );
-  border-radius: 50%;
-  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5);
-  animation: shooting-star 3s ease-in-out infinite;
-}
-
-/* Binary stars container */
-.binary-stars {
-  position: absolute;
-  left: 50%;
-  top: 40%;
-  transform: translate(-50%, -50%);
-}
-
-.binary-star {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(40px);
-  opacity: 0.15;
-}
-
-.binary-star-1 {
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(
-    circle,
-    rgba(255, 200, 100, 0.4) 0%,
-    rgba(255, 150, 50, 0) 70%
-  );
-  animation: orbit-star-1 20s linear infinite;
-}
-
-.binary-star-2 {
-  width: 160px;
-  height: 160px;
-  background: radial-gradient(
-    circle,
-    rgba(150, 180, 255, 0.3) 0%,
-    rgba(100, 120, 200, 0) 70%
-  );
-  animation: orbit-star-2 20s linear infinite;
-}
-
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
-/* Custom glow effect for product card */
-.card-glow {
-  position: relative;
-  background: linear-gradient(
-    135deg,
-    rgba(40, 40, 40, 0.8) 0%,
-    rgba(30, 30, 30, 0.9) 100%
-  );
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease-out;
+body {
+  min-height: 100%;
+  overflow: hidden;
+  background-color: #ffffff;
 }
 
-.card-glow:hover {
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1),
-    0 0 60px rgba(255, 255, 255, 0.05);
-  transform: translateY(-4px) scale(1.02);
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1b1b1b;
+  }
 }
 
-.card-glow::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0.05)
-  );
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.3s ease-out;
+@keyframes caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
 }
 
-.card-glow:hover::before {
-  opacity: 1;
+.typing-caret {
+  display: inline-block;
+  width: 0.08em;
+  height: 0.92em;
+  margin-left: 0.05em;
+  background-color: currentColor;
+  transform: skewX(-12deg);
+  animation: caret-blink 1s steps(1, end) infinite;
+}
+
+.hero-title {
+  font-size: clamp(2.25rem, 12vw, 5.3125rem) !important;
+  line-height: 1.05 !important;
+}
+
+@keyframes chevron-float-sine {
+  0% {
+    transform: translate(-50%, 0px);
+  }
+  12.5% {
+    transform: translate(-50%, -4.5px);
+  }
+  25% {
+    transform: translate(-50%, -8px);
+  }
+  37.5% {
+    transform: translate(-50%, -11px);
+  }
+  50% {
+    transform: translate(-50%, -12px);
+  }
+  62.5% {
+    transform: translate(-50%, -11px);
+  }
+  75% {
+    transform: translate(-50%, -8px);
+  }
+  87.5% {
+    transform: translate(-50%, -4.5px);
+  }
+  100% {
+    transform: translate(-50%, 0px);
+  }
+}
+
+.scroll-down-chevron {
+  animation: chevron-float-sine 2.2s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .scroll-down-chevron,
+  .typing-caret {
+    animation: none;
+  }
 }
