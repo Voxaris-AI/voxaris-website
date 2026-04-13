@@ -107,21 +107,29 @@
 
 .productsButton {
   margin: 0;
-  border: 0;
+  border: 1px solid transparent;
+  border-radius: 999px;
   background: transparent;
-  padding: 0;
+  padding: 8px 12px;
   font-family: var(--font-ibm-plex-sans), "IBM Plex Sans", sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #ffffff;
   white-space: nowrap;
   cursor: pointer;
-  transition: font-weight 160ms ease;
+  transition:
+    font-weight 160ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .productsButton:hover,
 .productsButton:focus-visible,
 .productsButtonActive {
+  border-color: rgba(255, 255, 255, 0.34);
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
   font-weight: 700;
 }
 
